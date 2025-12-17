@@ -10,7 +10,7 @@ When combining these patterns in a class constructor:
 
 The minifier may incorrectly optimize the code, causing `content` to be `undefined` when passed to the parent class.
 
-## What the Minifier Does Wrong
+## Minified JS
 
 **Original source:**
 ```javascript
