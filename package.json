@@ -1,26 +1,25 @@
 {
-  "name": "rspack-repro",
+  "name": "rspack-repro-minify-bug",
   "version": "1.0.0",
   "license": "MIT",
   "type": "module",
+  "description": "Minimal reproduction of Rspack minification bug with class constructor spread",
   "scripts": {
     "build": "npm-run-all build:* --sequential --print-name",
     "build:rspack": "cross-env RSPACK=1 rspack",
-    "build:rsbuild": "rsbuild build",
     "build:webpack": "cross-env WEBPACK=1 webpack -c ./rspack.config.mjs",
-    "dev:rspack": "cross-env RSPACK=1 rspack dev",
-    "dev:rsbuild": "rsbuild dev",
-    "dev:webpack": "cross-env WEBPACK=1 webpack serve -c ./rspack.config.mjs"
+    "build:rspack:no-minimize": "cross-env RSPACK=1 MINIMIZE=false rspack",
+    "build:webpack:no-minimize": "cross-env WEBPACK=1 MINIMIZE=false webpack -c ./rspack.config.mjs",
+    "test:rspack": "node rspack-dist/main.js",
+    "test:webpack": "node webpack-dist/main.js"
   },
   "dependencies": {
     "@rspack/cli": "^1.6.0",
     "@rspack/core": "^1.6.0",
-    "html-webpack-plugin": "^5.6.4",
     "webpack": "^5.102.1",
     "webpack-cli": "^6.0.1"
   },
   "devDependencies": {
-    "@rsbuild/core": "^1.6.1",
     "cross-env": "^10.1.0",
     "npm-run-all2": "^8.0.4"
   },
