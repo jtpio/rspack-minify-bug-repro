@@ -31,6 +31,7 @@ The minifier collapses the reassignments into the `super()` call, but places `co
 ## Related Issues
 
 - https://github.com/jupyterlab/jupyterlab/issues/18227
+- https://github.com/web-infra-dev/rspack/issues/12492
 
 ## Reproduction Steps
 
